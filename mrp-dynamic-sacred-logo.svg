@@ -1,0 +1,211 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Definitions -->
+  <defs>
+    <!-- Synthwave Grid -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#2DE2E6" stroke-width="0.5" opacity="0.15">
+        <animate attributeName="stroke-opacity" values="0.15;0.3;0.15" dur="3s" repeatCount="indefinite"/>
+      </path>
+    </pattern>
+    
+    <!-- Dark Cyber Gradient -->
+    <linearGradient id="cyber-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#000000"/>
+      <stop offset="50%" style="stop-color:#1A0B2E"/>
+      <stop offset="100%" style="stop-color:#000000">
+        <animate attributeName="stop-color" values="#000000;#1A0B2E;#000000" dur="5s" repeatCount="indefinite"/>
+      </stop>
+    </linearGradient>
+    
+    <!-- Neon Glow -->
+    <filter id="neon-glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Rotating Gradient -->
+    <linearGradient id="rotating-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FF0080;stop-opacity:0.5">
+        <animate attributeName="stop-opacity" values="0.5;0.8;0.5" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <stop offset="100%" style="stop-color:#2DE2E6;stop-opacity:0.5">
+        <animate attributeName="stop-opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite"/>
+      </stop>
+      <animateTransform attributeName="gradientTransform" 
+                        type="rotate" 
+                        from="0 0.5 0.5" 
+                        to="360 0.5 0.5" 
+                        dur="10s" 
+                        repeatCount="indefinite"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background Elements -->
+  <circle cx="200" cy="200" r="190" fill="url(#cyber-gradient)"/>
+  <circle cx="200" cy="200" r="190" fill="url(#grid)">
+    <animate attributeName="opacity" values="0.8;0.3;0.8" dur="5s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Animated Flower of Life -->
+  <g transform="translate(200 200)" opacity="0.3" stroke="#FF0080" stroke-width="0.5" fill="none">
+    <g>
+      <circle cx="0" cy="0" r="60">
+        <animate attributeName="r" values="60;65;60" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="52" cy="30" r="60">
+        <animate attributeName="r" values="60;65;60" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+      <circle cx="-52" cy="30" r="60">
+        <animate attributeName="r" values="60;65;60" dur="3s" repeatCount="indefinite" begin="1s"/>
+      </circle>
+      <circle cx="52" cy="-30" r="60">
+        <animate attributeName="r" values="60;65;60" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+      </circle>
+      <circle cx="-52" cy="-30" r="60">
+        <animate attributeName="r" values="60;65;60" dur="3s" repeatCount="indefinite" begin="2s"/>
+      </circle>
+      <animateTransform attributeName="transform"
+                        type="rotate"
+                        from="0"
+                        to="360"
+                        dur="30s"
+                        repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Dynamic Metatron's Cube -->
+  <g transform="translate(200 200)" filter="url(#neon-glow)">
+    <g>
+      <!-- Rotating Inner Hexagram -->
+      <path d="M 0,-70 L 60.62,35 L -60.62,35 Z M 0,70 L 60.62,-35 L -60.62,-35 Z" 
+            fill="none" stroke="#2DE2E6" stroke-width="1" opacity="0.6">
+        <animateTransform attributeName="transform"
+                          type="rotate"
+                          from="0"
+                          to="360"
+                          dur="20s"
+                          repeatCount="indefinite"/>
+      </path>
+      
+      <!-- Pulsing Central Hexagon -->
+      <path d="M 0,-40 L 34.64,-20 L 34.64,20 L 0,40 L -34.64,20 L -34.64,-20 Z" 
+            fill="none" stroke="#FF0080" stroke-width="2">
+        <animate attributeName="stroke-width" values="2;3;2" dur="2s" repeatCount="indefinite"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Energetic Flow Lines -->
+  <g transform="translate(200 200)">
+    <g stroke="#2DE2E6" stroke-width="1" opacity="0.6">
+      <path d="M -100,-100 Q 0,0 100,100" fill="none">
+        <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="2s" repeatCount="indefinite"/>
+      </path>
+      <path d="M 100,-100 Q 0,0 -100,100" fill="none">
+        <animate attributeName="stroke-dasharray" values="0,200;200,0" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </path>
+    </g>
+  </g>
+
+  <!-- Dynamic Central Pattern -->
+  <g transform="translate(200 200)" filter="url(#neon-glow)">
+    <!-- Rotating Triangles -->
+    <g>
+      <path d="M 0,-50 L 43.3,25 L -43.3,25 Z" 
+            fill="#000000" stroke="#FF0080" stroke-width="3">
+        <animateTransform attributeName="transform"
+                          type="rotate"
+                          values="0;120;240;360"
+                          dur="10s"
+                          repeatCount="indefinite"/>
+      </path>
+      
+      <path d="M 0,-25 L 21.65,12.5 L -21.65,12.5 Z" 
+            fill="#000000" stroke="#2DE2E6" stroke-width="2">
+        <animateTransform attributeName="transform"
+                          type="rotate"
+                          values="360;240;120;0"
+                          dur="10s"
+                          repeatCount="indefinite"/>
+      </path>
+    </g>
+
+    <!-- Pulsing Center -->
+    <circle cx="0" cy="0" r="3" fill="#FF0080">
+      <animate attributeName="r" values="3;5;3" dur="1s" repeatCount="indefinite"/>
+      <animate attributeName="fill-opacity" values="1;0.5;1" dur="1s" repeatCount="indefinite"/>
+    </circle>
+
+    <!-- Energy Rings -->
+    <g opacity="0.6">
+      <circle cx="0" cy="0" r="15" fill="none" stroke="#2DE2E6" stroke-width="1">
+        <animate attributeName="r" values="15;25;15" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="20" fill="none" stroke="#FF0080" stroke-width="1">
+        <animate attributeName="r" values="20;30;20" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.6;0.2;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+
+  <!-- Spinning Vesica Piscis -->
+  <g transform="translate(200 200)" opacity="0.3">
+    <g>
+      <path d="M -30,0 A 30,30 0 0,1 30,0 A 30,30 0 0,1 -30,0" 
+            fill="none" stroke="#FF0080" stroke-width="1"/>
+      <path d="M 0,-30 A 30,30 0 0,1 0,30 A 30,30 0 0,1 0,-30" 
+            fill="none" stroke="#FF0080" stroke-width="1"/>
+      <animateTransform attributeName="transform"
+                        type="rotate"
+                        from="0"
+                        to="360"
+                        dur="15s"
+                        repeatCount="indefinite"/>
+    </g>
+  </g>
+
+  <!-- Logo Text -->
+  <g transform="translate(200 200)" text-anchor="middle" filter="url(#neon-glow)">
+    <text x="0" y="90" font-family="Arial" font-weight="bold" font-size="60" fill="#2DE2E6">
+      MRP
+      <animate attributeName="fill-opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </text>
+    <text x="0" y="120" font-family="Arial" font-size="20" fill="#FF0080">
+      MINING RIGHTS PROTOCOL
+      <animate attributeName="fill-opacity" values="1;0.7;1" dur="2s" repeatCount="indefinite"/>
+    </text>
+  </g>
+
+  <!-- Dynamic Outer Rings -->
+  <g transform="translate(200 200)" opacity="0.4">
+    <!-- Rotating Outer Circle -->
+    <g>
+      <circle cx="0" cy="0" r="160" fill="none" stroke="url(#rotating-gradient)" stroke-width="0.5"/>
+      <animateTransform attributeName="transform"
+                        type="rotate"
+                        from="0"
+                        to="360"
+                        dur="30s"
+                        repeatCount="indefinite"/>
+    </g>
+    <!-- Pulsing Points -->
+    <g fill="#2DE2E6">
+      <circle cx="0" cy="-165" r="1">
+        <animate attributeName="r" values="1;2;1" dur="1s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="165" cy="0" r="1">
+        <animate attributeName="r" values="1;2;1" dur="1s" repeatCount="indefinite" begin="0.25s"/>
+      </circle>
+      <circle cx="0" cy="165" r="1">
+        <animate attributeName="r" values="1;2;1" dur="1s" repeatCount="indefinite" begin="0.5s"/>
+      </circle>
+      <circle cx="-165" cy="0" r="1">
+        <animate attributeName="r" values="1;2;1" dur="1s" repeatCount="indefinite" begin="0.75s"/>
+      </circle>
+    </g>
+  </g>
+</svg>
