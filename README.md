@@ -1,5 +1,4 @@
-# Mining Rights NFT Emission Protocol - Token Quarry
-
+# Mining Rights NFT Emission Protocol
 
 A blockchain-based protocol that implements a mineral rights-like system for NFT mining. Miners must acquire rights tokens before being eligible to claim NFTs for successfully mined blocks.
 
